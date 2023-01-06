@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveCarder", "ActiveCarder\ActiveCarder.csproj", "{C8C00C3C-D6C7-4524-89B0-E6DC80B39BC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8C00C3C-D6C7-4524-89B0-E6DC80B39BC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8C00C3C-D6C7-4524-89B0-E6DC80B39BC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8C00C3C-D6C7-4524-89B0-E6DC80B39BC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8C00C3C-D6C7-4524-89B0-E6DC80B39BC4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4892E7C-5CE3-4D2C-AFEE-28EFBB22D378}
+	EndGlobalSection
+EndGlobal
