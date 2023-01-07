@@ -10,7 +10,7 @@ namespace MyApp.DataAccess
 {
     public class MyDbContext : DbContext
     {
-        public DbSet<MasterEmployee> MasterEmployees { get; set; }
+        public DbSet<Employees> MasterEmployees { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
