@@ -27,12 +27,50 @@ namespace MyApp.Controllers
             return Ok(mappedEmployees);
         }
 
-        //[HttpGet]
-        //public IActionResult GetEmployees()
-        //{
-        //    var Employees = _service.GetAllEmployees(); 
-        //    var mappedEmployees = _mapper.Map<Employees>(Employees);
-        //    return Ok(mappedEmployees);
-        //}
+        [HttpGet("{empNo}", Name = "GetEmployees")]
+        public IActionResult GetEmployees(int empNo)
+        {
+            var Employees = _service.GetEmployee(empNo);
+            var mappedEmployees = _mapper.Map<EmployeeDTO>(Employees);
+            return Ok(mappedEmployees);
+        }
+
+        [HttpPost]
+        public ActionResult<CreateEmployeeDTO> PostEmployee(CreateEmployeeDTO employee)
+        {
+            var newEmployee = _mapper.Map<Employees>(employee);
+            var saveEmployee = _service.CreateEmployee(newEmployee);
+            var authForSave = _mapper.Map<EmployeeDTO>(saveEmployee);
+
+            return CreatedAtRoute("GetEmployees", new { empNo = authForSave.EmployeeNo }, authForSave);
+        }
+
+        [HttpPut("{empNo}")]
+        public ActionResult UpdateEmployee(int empNo, UpdateEmployeeDTO update)
+        {
+            var updateEmp = _service.GetEmployee(empNo);
+            if (updateEmp is null)
+            {
+                return NoContent();
+            }
+
+            _mapper.Map(update, updateEmp);
+            _service.UpdateEmployee(updateEmp);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{empNo}")]
+        public ActionResult DeleteEmployee(int empNo)
+        {
+            var deleteEmp = _service.GetEmployee(empNo);
+            if (deleteEmp is null)
+            {
+                return NotFound();
+            }
+
+            _service.DeleteEmployee(deleteEmp);
+            return NoContent();
+        }
     }
 }

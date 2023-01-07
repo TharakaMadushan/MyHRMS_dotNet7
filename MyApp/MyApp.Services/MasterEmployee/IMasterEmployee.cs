@@ -10,5 +10,9 @@ namespace MyApp.Services.MasterEmployee
     public interface IMasterEmployee
     {
         public List<Employees> GetAllEmployees();
+        public Employees GetEmployee(int id);
+        public Employees CreateEmployee(Employees employee);
+        public void UpdateEmployee(Employees employee);
+        public void DeleteEmployee(Employees employee);
     }
 }

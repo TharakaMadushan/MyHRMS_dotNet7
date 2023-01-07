@@ -15,6 +15,9 @@ namespace MyApp.Services.Profiles
         {
             CreateMap<Employees, EmployeeDTO>().ForMember(dest => dest.EmployeeFullName, 
                 opt => opt.MapFrom(src => $"{src.FirstName} {src.LastName}"));
+
+            CreateMap<CreateEmployeeDTO, Employees>();
+            CreateMap<UpdateEmployeeDTO, Employees>();
         }    
     }
 }
